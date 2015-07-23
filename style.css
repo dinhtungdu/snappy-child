@@ -1,0 +1,73 @@
+@charset "UTF-8";
+/*
+Theme Name: Snappy - Child Theme
+Theme URI: http://moztheme.com/
+Author: Tung Du
+Author URI: http://dinhtung.info
+Description: Child theme for snappy
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: snappy
+*/
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.site-branding {
+  background: #ff0052;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0052), color-stop(77%, #ff0052), color-stop(100%, #e50047));
+  background: -webkit-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  background: -o-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  background: -ms-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  background: linear-gradient(to bottom, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0052', endColorstr='#e50047',GradientType=0 ); }
+  @media screen and (min-width: 53.75em) {
+    .site-branding .container {
+      padding-bottom: 2rem; } }
+
+@media screen and (min-width: 53.75em) {
+  .snappy-menu-wrapper {
+    background: transparent;
+    margin-top: -2rem; } }
+@media screen and (min-width: 53.75em) {
+  .snappy-menu-wrapper nav#site-navigation {
+    background-color: #f7f7f7;
+    background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #eee 80%, #CED1D2 100%);
+    background-image: linear-gradient(to bottom,#f7f7f7 0%, #eee 80%, #CED1D2 100%); } }
+
+#content > .container {
+  position: relative; }
+  #content > .container:before {
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    content: ' ';
+    background-color: #f1f1f1;
+    background-image: -webkit-linear-gradient(top, #f1f1f1, #ffffff);
+    background-image: linear-gradient(to bottom,#f1f1f1, #ffffff);
+    display: block; }
+  @media screen and (min-width: 53.75em) {
+    #content > .container #primary {
+      margin-left: 2%;
+      position: relative; }
+      #content > .container #primary:after {
+        width: 1px;
+        content: ' ';
+        position: absolute;
+        top: 0;
+        right: -3.33333%;
+        background: rgba(211, 212, 213, 0.5);
+        height: 100%; } }
+  @media screen and (min-width: 53.75em) {
+    #content > .container #secondary {
+      margin-right: 2%;
+      position: relative; } }
+
+/*# sourceMappingURL=style.css.map */

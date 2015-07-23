@@ -1,0 +1,80 @@
+/*
+Theme Name: Snappy - Child Theme
+Theme URI: http://moztheme.com/
+Author: Tung Du
+Author URI: http://dinhtung.info
+Description: Child theme for snappy
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template: snappy
+*/
+@charset "UTF-8";
+@import "bourbon/bourbon";
+@import "../base/grid-settings";
+@import "neat/neat";
+.site-branding {
+  background: #ff0052;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+  background: -moz-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0052), color-stop(77%,#ff0052), color-stop(100%,#e50047));
+  background: -webkit-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+  background: -o-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+  background: -ms-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+  background: linear-gradient(to bottom, #ff0052 0%,#ff0052 77%,#e50047 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0052', endColorstr='#e50047',GradientType=0 );
+
+  .container {
+    @include media($large-screen) {
+      padding-bottom: 2rem;
+    }
+  }
+
+}
+
+.snappy-menu-wrapper {
+  @include media($large-screen) {
+    background: transparent;
+    margin-top: - 2rem;
+  }
+
+  nav#site-navigation {
+    @include media($large-screen) {  
+      @include linear-gradient( top, #f7f7f7 0%, #eee 80%, #CED1D2 100%);
+    }
+  }
+}
+
+#content > .container {
+  position: relative;
+
+  &:before {
+    width: 100%;
+    height: 20%;
+    @include position( absolute, 0 null null 0 );
+    z-index: -1;
+    content: ' ';
+    @include linear-gradient( top, #f1f1f1, #ffffff );
+    display: block;
+  }
+
+  #primary {
+    @include media($large-screen) {
+      margin-left: 2%;
+      position: relative;
+      &:after {
+        width: 1px;
+        content: ' ';
+        @include position( absolute, 0 -3.33333% null null);
+        background: rgba( #D3D4D5, 0.5 );
+        height: 100%;
+      }
+    }
+  }
+
+  #secondary {
+    @include media($large-screen) {
+      margin-right: 2%;
+      position: relative;
+    }
+  }
+}
