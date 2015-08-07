@@ -9,38 +9,72 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: snappy
 */
+/* line 4, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 html {
   box-sizing: border-box; }
 
+/* line 9, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 *, *::after, *::before {
   box-sizing: inherit; }
 
+/* line 25, style.scss */
 .site-branding {
-  background: #ff0052;
-  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-  background: -moz-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ff0052), color-stop(77%, #ff0052), color-stop(100%, #e50047));
-  background: -webkit-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
-  background: -o-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
-  background: -ms-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
-  background: linear-gradient(to bottom, #ff0052 0%, #ff0052 77%, #e50047 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0052', endColorstr='#e50047',GradientType=0 ); }
+  background-color: #EE2A7B;
+  background-image: -webkit-linear-gradient(top, #EE2A7B 0%, #EE2A7B 77%, #d41162 100%);
+  background-image: linear-gradient(to bottom,#EE2A7B 0%, #EE2A7B 77%, #d41162 100%);
+  /*   background: #ff0052;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…EiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #ff0052 0%, #ff0052 77%, #e50047 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ff0052), color-stop(77%,#ff0052), color-stop(100%,#e50047));
+    background: -webkit-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+    background: -o-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+    background: -ms-linear-gradient(top, #ff0052 0%,#ff0052 77%,#e50047 100%);
+    background: linear-gradient(to bottom, #ff0052 0%,#ff0052 77%,#e50047 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff0052', endColorstr='#e50047',GradientType=0 );
+   */ }
   @media screen and (min-width: 53.75em) {
+    /* line 37, style.scss */
     .site-branding .container {
-      padding-bottom: 2rem; } }
+      padding-bottom: 1.5em; } }
+  @media screen and (min-width: 53.75em) {
+    /* line 43, style.scss */
+    .site-branding .search-form {
+      position: absolute;
+      right: 0;
+      bottom: 2em; } }
 
 @media screen and (min-width: 53.75em) {
+  /* line 53, style.scss */
   .snappy-menu-wrapper {
     background: transparent;
-    margin-top: -2rem; } }
+    margin-top: -1.25em; } }
 @media screen and (min-width: 53.75em) {
+  /* line 59, style.scss */
   .snappy-menu-wrapper nav#site-navigation {
     background-color: #f7f7f7;
     background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #eee 80%, #CED1D2 100%);
     background-image: linear-gradient(to bottom,#f7f7f7 0%, #eee 80%, #CED1D2 100%); } }
 
+/* line 66, style.scss */
+#content {
+  background-color: #f1f1f1;
+  background-image: -webkit-linear-gradient(top, #f1f1f1 0%, #ffffff 20%, #ffffff 100%);
+  background-image: linear-gradient(to bottom,#f1f1f1 0%, #ffffff 20%, #ffffff 100%); }
+  @media screen and (min-width: 53.75em) {
+    /* line 66, style.scss */
+    #content {
+      background: transparent; } }
+
+/* line 72, style.scss */
 #content > .container {
   position: relative; }
+  @media screen and (min-width: 53.75em) {
+    /* line 72, style.scss */
+    #content > .container {
+      background-color: #f1f1f1;
+      background-image: -webkit-linear-gradient(top, #f1f1f1 0%, #ffffff 20%, #ffffff 100%);
+      background-image: linear-gradient(to bottom,#f1f1f1 0%, #ffffff 20%, #ffffff 100%); } }
+  /* line 78, style.scss */
   #content > .container:before {
     width: 100%;
     height: 20%;
@@ -48,15 +82,17 @@ html {
     top: 0;
     left: 0;
     z-index: -1;
-    content: ' ';
+    content: none;
     background-color: #f1f1f1;
     background-image: -webkit-linear-gradient(top, #f1f1f1, #ffffff);
     background-image: linear-gradient(to bottom,#f1f1f1, #ffffff);
     display: block; }
   @media screen and (min-width: 53.75em) {
+    /* line 89, style.scss */
     #content > .container #primary {
       margin-left: 2%;
       position: relative; }
+      /* line 93, style.scss */
       #content > .container #primary:after {
         width: 1px;
         content: ' ';
@@ -66,8 +102,342 @@ html {
         background: rgba(211, 212, 213, 0.5);
         height: 100%; } }
   @media screen and (min-width: 53.75em) {
+    /* line 103, style.scss */
     #content > .container #secondary {
       margin-right: 2%;
       position: relative; } }
+
+/* line 113, style.scss */
+.home-slider {
+  position: relative; }
+  /* line 116, style.scss */
+  .home-slider h2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    margin-bottom: 0;
+    background: #EE2A7B;
+    color: white;
+    font-size: 1.25em; }
+    /* line 126, style.scss */
+    .home-slider h2 span {
+      position: relative;
+      padding: 0.25em 0.5em;
+      display: block; }
+      /* line 131, style.scss */
+      .home-slider h2 span:after, .home-slider h2 span:before {
+        content: ' ';
+        position: absolute;
+        border-bottom: 0.875em solid #EE2A7B;
+        border-left: 0.875em solid transparent;
+        border-right: 0.875em solid transparent;
+        right: -0.875em;
+        bottom: 0; }
+      /* line 140, style.scss */
+      .home-slider h2 span:before {
+        border-bottom: none;
+        border-top: 0.875em solid #EE2A7B;
+        top: 0;
+        bottom: inherit; }
+  /* line 150, style.scss */
+  .home-slider .slide-item {
+    position: relative; }
+    /* line 153, style.scss */
+    .home-slider .slide-item .slide-title {
+      position: absolute;
+      bottom: 0;
+      z-index: 1;
+      background: rgba(238, 42, 123, 0.8);
+      color: #fff;
+      font-size: 0.9em;
+      padding: 0.9em 1.5em;
+      display: block;
+      width: 100%; }
+
+/* line 167, style.scss */
+.home-h2, .homecat h2, .widget-area .widget-title {
+  text-transform: uppercase;
+  border-bottom: 4px solid #FFD200;
+  color: #414042;
+  line-height: 1.5; }
+  /* line 173, style.scss */
+  .home-h2 a, .homecat h2 a, .widget-area .widget-title a {
+    color: #414042; }
+    /* line 176, style.scss */
+    .home-h2 a:hover, .homecat h2 a:hover, .widget-area .widget-title a:hover {
+      color: #111; }
+
+/* line 182, style.scss */
+.thumb {
+  float: left;
+  margin-right: 1.25em;
+  display: block;
+  line-height: 1;
+  max-width: 50%; }
+  @media screen and (min-width: 40em) {
+    /* line 182, style.scss */
+    .thumb {
+      max-width: 100%; } }
+  /* line 193, style.scss */
+  .thumb img {
+    width: 135px;
+    height: auto;
+    vertical-align: bottom;
+    max-width: 100%; }
+    @media screen and (min-width: 40em) {
+      /* line 193, style.scss */
+      .thumb img {
+        width: auto; } }
+
+@media screen and (min-width: 40em) {
+  /* line 205, style.scss */
+  h3.entry-title {
+    font-size: 1.5em; } }
+/* line 211, style.scss */
+h3.entry-title a {
+  color: #111; }
+  /* line 214, style.scss */
+  h3.entry-title a:hover, h3.entry-title a:focus {
+    color: #EE2A7B; }
+
+/* line 220, style.scss */
+p.entry-excerpt {
+  color: #58595B;
+  display: none;
+  margin-bottom: 0;
+  text-align: justify;
+  font-size: 0.875em; }
+  @media screen and (min-width: 40em) {
+    /* line 220, style.scss */
+    p.entry-excerpt {
+      display: block; } }
+  @media screen and (min-width: 53.75em) {
+    /* line 220, style.scss */
+    p.entry-excerpt {
+      font-size: 0.8125em; } }
+
+/* line 236, style.scss */
+time {
+  font-size: 0.75em;
+  color: #EE2A7B;
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5em;
+  font-family: "Roboto Condensed", sans-serif; }
+  /* line 244, style.scss */
+  time i {
+    margin-right: 5px; }
+
+/* line 249, style.scss */
+.recent-item, .homecat .big {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  margin-bottom: 1em;
+  padding-bottom: 1em; }
+  /* line 20, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+  .recent-item::after, .homecat .big::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/* line 256, style.scss */
+.bannr {
+  display: block;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  text-align: center; }
+
+/* line 20, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+.homecat::after {
+  clear: both;
+  content: "";
+  display: table; }
+/* line 267, style.scss */
+.homecat h2 {
+  border-bottom-color: #EE2A7B; }
+@media screen and (min-width: 40em) {
+  /* line 272, style.scss */
+  .homecat .big {
+    width: 31%;
+    margin-right: 3.5%;
+    float: left;
+    border-bottom: none;
+    padding-bottom: 0; }
+    /* line 282, style.scss */
+    .homecat .big.nth-3 {
+      margin-right: 0; }
+    /* line 286, style.scss */
+    .homecat .big .thumb {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 1em; }
+    /* line 291, style.scss */
+    .homecat .big .entry-title {
+      font-size: 1em; }
+    /* line 298, style.scss */
+    .homecat .big time {
+      display: none; } }
+
+/* line 305, style.scss */
+.small, .small-alt {
+  list-style: disc;
+  padding-left: 1.25em;
+  color: #EE2A7B;
+  margin-bottom: 1em; }
+  /* line 20, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+  .small::after, .small-alt::after {
+    clear: both;
+    content: "";
+    display: table; }
+  /* line 312, style.scss */
+  .small a, .small-alt a {
+    color: #58595B;
+    line-height: 1; }
+    /* line 316, style.scss */
+    .small a:hover, .small-alt a:hover {
+      color: #EE2A7B; }
+
+@media screen and (min-width: 40em) {
+  /* line 322, style.scss */
+  .small {
+    padding-top: 1em;
+    padding-bottom: 0;
+    border-top: 1px solid rgba(204, 204, 204, 0.4);
+    border-bottom: none; }
+    /* line 329, style.scss */
+    .small li {
+      width: 48%;
+      float: left;
+      line-height: 1.3; }
+      /* line 334, style.scss */
+      .small li:first-child {
+        margin-right: 4%; }
+    /* line 338, style.scss */
+    .small .clearfix + li {
+      margin-right: 4%; }
+    /* line 342, style.scss */
+    .small a {
+      font-size: 0.8125em; } }
+
+/* line 352, style.scss */
+.homecat-1 .big-alt .thumb {
+  margin-bottom: 1em; }
+/* line 357, style.scss */
+.homecat-1 .small-alt {
+  padding-top: 1em;
+  border-top: 1px solid rgba(204, 204, 204, 0.4); }
+@media screen and (max-width: 40em) {
+  /* line 20, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+  .homecat-1 .big-alt::after {
+    clear: both;
+    content: "";
+    display: table; } }
+@media screen and (min-width: 40em) {
+  /* line 369, style.scss */
+  .homecat-1 .big-alt {
+    margin-bottom: 0.5em; }
+  /* line 372, style.scss */
+  .homecat-1 .small-alt {
+    margin-left: 290px;
+    padding-top: 0.5em;
+    padding-left: 16px; }
+    /* line 377, style.scss */
+    .homecat-1 .small-alt a {
+      font-size: 0.8125em; } }
+
+/* line 385, style.scss */
+.widget-area .widget-title {
+  border-bottom-color: #EE2A7B;
+  border-bottom-width: 3px;
+  font-size: 1.3em; }
+
+/* line 394, style.scss */
+.widget_tnpf .widget-title {
+  margin-bottom: 0; }
+/* line 397, style.scss */
+.widget_tnpf ul {
+  counter-reset: li-counter;
+  list-style: none; }
+/* line 401, style.scss */
+.widget_tnpf li {
+  padding: 1em 0;
+  background-color: #F2F3F3;
+  background-image: -webkit-linear-gradient(top, #F2F3F3, #FFF);
+  background-image: linear-gradient(to bottom,#F2F3F3, #FFF); }
+  /* line 405, style.scss */
+  .widget_tnpf li .entry-title {
+    font-size: 1em;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: #414042;
+    font-family: "Roboto Condensed", sans-serif; }
+  /* line 412, style.scss */
+  .widget_tnpf li a {
+    max-width: 230px;
+    display: block;
+    margin: 0 auto; }
+    /* line 417, style.scss */
+    .widget_tnpf li a:hover .entry-title {
+      color: #111; }
+  /* line 421, style.scss */
+  .widget_tnpf li .thumb-aside img {
+    margin-bottom: 1em; }
+  /* line 424, style.scss */
+  .widget_tnpf li span {
+    position: relative; }
+    /* line 427, style.scss */
+    .widget_tnpf li span:before {
+      content: counter(li-counter);
+      counter-increment: li-counter;
+      position: absolute;
+      left: -.75em;
+      font-size: 2em;
+      font-weight: bold;
+      color: #EE2A7B;
+      line-height: 0.5em; }
+
+/* line 442, style.scss */
+.widget_tnpcp li {
+  margin-bottom: 1em;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.25); }
+  /* line 20, /Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+  .widget_tnpcp li::after {
+    clear: both;
+    content: "";
+    display: table; }
+/* line 450, style.scss */
+.widget_tnpcp img {
+  max-width: 40%;
+  float: left;
+  margin-right: 1em;
+  width: 120px; }
+/* line 457, style.scss */
+.widget_tnpcp span {
+  color: #414042;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: bold; }
+/* line 463, style.scss */
+.widget_tnpcp time {
+  margin-top: 0.5em; }
+/* line 467, style.scss */
+.widget_tnpcp a:hover span {
+  color: #111; }
+
+/* line 472, style.scss */
+.grid-sizer, .widget {
+  width: 100%; }
+  @media screen and (min-width: 40em) and (max-width: 53.75em) {
+    /* line 472, style.scss */
+    .grid-sizer, .widget {
+      width: 48%; } }
+
+/* line 480, style.scss */
+.gutter-sizer {
+  width: 0; }
+  @media screen and (min-width: 40em) and (max-width: 53.75em) {
+    /* line 480, style.scss */
+    .gutter-sizer {
+      width: 4%; } }
 
 /*# sourceMappingURL=style.css.map */

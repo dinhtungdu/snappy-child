@@ -1,2 +1,5 @@
 prepros.cfg
 .sass-cache/
+*.scssc
+screenshot.png
+*.map
