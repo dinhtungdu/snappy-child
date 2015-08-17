@@ -1,0 +1,46 @@
+// Store the different functions which could alter colors:
+// 1 Key is shorthand to be used in partials, value is map. 
+// 2-A First item in map (key: function) is the function name, 
+// 2-B Optional second map (key: parameters) is a list of additional values.
+// With these limitations, this function does not support 
+// adjust-color, scale-color & change-color.
+
+@function color-variation($color, $variation: false) {
+
+  // Correctly set $color variable:
+  @if map-has-key($colors, $color) {
+    // $color is in $colors, set variable = map-value
+    $color: map-get($colors, $color); 
+  } @else {
+    @if type-of($color) != color {
+      // $color is not in $color and $color is not a color
+      @error "Invalid color name: `#{$color}`."; 
+    }
+    // $color is a valid color - use it
+  }
+
+  @if $variation {
+    @if not map-has-key($variations, $variation) {
+      // variation is not in $variations
+      @error "Invalid $variation: `#{$variation}`.";
+    } @else {
+      // make it easier to deal with nested map
+      $this-variation: map-get($variations, $variation);
+      // $args = $function, $color
+      $args: join(map-get($this-variation, function), $color);
+      @if map-get($this-variation, parameters) {
+        // $args = $function, $colors, $parameters
+        $args: join($args, map-get($this-variation, parameters));
+      }
+      //@return $args;
+      @return call($args...);
+    }
+  }
+  // no $variation, just return $color
+  @return $color;
+}
+
+// Alias function to make typing easier:
+@function color($color, $variation:false) {
+  @return color-variation($color, $variation);
+}
