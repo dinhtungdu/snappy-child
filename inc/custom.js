@@ -1,6 +1,6 @@
 jQuery( function($) {
+  var screen_w = $(window).width();
   $(document).ready(function() {
-    var screen_w = $(window).width();
     // $(".owl-1").owlCarousel({
     //   loop: true,
     //   items: 1,
@@ -17,7 +17,7 @@ jQuery( function($) {
       }
     });
     
-    if( screen_w < 600 ) {
+    if( screen_w < 768 ) {
       $('.archive.woocommerce .products').find('li:nth-child(3n)').after('<div class="border"></div>');
     }
     else {
@@ -27,7 +27,7 @@ jQuery( function($) {
 
   $(window).resize(function(event) {
     $('.archive .border').remove();
-    if( screen_w < 600 ) {
+    if( screen_w < 768 ) {
       $('.archive.woocommerce .products').find('li:nth-child(3n)').after('<div class="border"></div>');
     }
     else {
