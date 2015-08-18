@@ -200,9 +200,10 @@ footer#colophon {
         margin-right: 0;
       }
 
-      @include media($medium-screen) {
+      @include media( 768px ) {
         width: 23.5%;
         margin-right: 2%;
+        margin-bottom: 1em;
 
         &:nth-of-type(3n) {
           float: left;

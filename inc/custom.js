@@ -26,6 +26,7 @@ jQuery( function($) {
   });
 
   $(window).resize(function(event) {
+    var screen_w = $(window).width();
     $('.archive .border').remove();
     if( screen_w < 768 ) {
       $('.archive.woocommerce .products').find('li:nth-child(3n)').after('<div class="border"></div>');

@@ -152,3 +152,12 @@ if (!function_exists('loop_columns')) {
   }
 }
 add_filter( 'loop_shop_per_page', create_function( '$cols', 'return 24;' ), 20 );
+
+/*
+ * Removes products count after categories name 
+ */
+add_filter( 'woocommerce_subcategory_count_html', 'woo_remove_category_products_count' );
+ 
+function woo_remove_category_products_count() {
+  return;
+}
