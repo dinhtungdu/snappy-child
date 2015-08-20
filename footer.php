@@ -30,11 +30,6 @@ global $snappy;
 				</div>
 			</div>
 		</div>
-		<div class="site-info snappy-row">
-			<div class="container">
-				&copy; Copyright <?php echo date('Y'); ?>. <?php echo bloginfo('name'); ?> - <?php echo bloginfo('description'); ?>. Thiết kế bởi VietMoz.
-			</div>
-		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

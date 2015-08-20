@@ -3,3 +3,4 @@ prepros.cfg
 *.scssc
 screenshot.png
 *.map
+.DS_Store
