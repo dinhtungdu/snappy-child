@@ -6,11 +6,51 @@
  *
  * @package Snappy
  */
-
+$cat = get_query_var( 'cat' );
 get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+
+			<?php if ( function_exists('yoast_breadcrumb') ) 
+{yoast_breadcrumb('<p id="breadcrumbs">','</p>');} ?>
+
+      <div class="home-slider">
+
+        <div class="owl-carousel owl-1 owl-theme">
+        <?php
+        // get sticky posts from DB
+				$sticky = get_option('sticky_posts');
+				if( !empty( $sticky ) ) :
+
+          $args = array(
+						'post_type' => 'post',
+						'post__in' => $sticky,
+						'posts_per_page' => 4,
+						'cat' => $cat
+					);
+          $the_query = new WP_Query( $args );
+          if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <div class="slide-item">
+              <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+              <?php if (class_exists('MultiPostThumbnails')) :
+                MultiPostThumbnails::the_post_thumbnail(
+                  get_post_type(),
+                  'tertiary-image',
+                  get_the_id(),
+                  'full'
+                );
+              endif; ?>
+              </a>
+            </div>
+          <?php endwhile;?>
+          <?php endif; ?>
+          <?php wp_reset_query(); ?>
+          <?php endif; //end check stick post exist ?>
+
+        </div><!-- .owl-1 -->
+
+      </div><!-- .home-slider -->
 
 		<?php if ( have_posts() ) : ?>
 
@@ -36,7 +76,7 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-			<?php //the_posts_navigation(); ?>
+			<?php snappy_pagination(); ?>
 
 		<?php else : ?>
 

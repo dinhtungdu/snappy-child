@@ -4,7 +4,8 @@
  *
  * @package Snappy
  */
-
+$cat = get_query_var( 'var' );
+$postid = get_the_id();
 get_header(); ?>
 
 	<div id="primary" class="content-area">
@@ -24,27 +25,6 @@ get_header(); ?>
 			?>
 
 		<?php endwhile; // End of the loop. ?>
-
-    <div class="recent">
-      <h2 class="home-h2">
-        <span>Bài viết mới nhất</span>
-      </h2>
-      <?php
-        $args = array(
-          'post_type'=> 'post',
-          'order'    => 'DESC',
-          'posts_per_page' => 5,
-          'post__not_in' => $snappy['tpn_slider_ids'],
-          'category__not_in'  => $snappy['tpn_home_cat']
-        );             
-        $the_query = new WP_Query( $args );
-        $count = 1;
-        if($the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					<?php get_template_part( 'framework/templates/single/content' ); ?>
-        <?php endwhile;?>
-        <?php endif; ?>
-        <?php wp_reset_query(); ?>        
-    </div>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

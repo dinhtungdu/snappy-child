@@ -8,6 +8,14 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: snappy
 */
+@font-face {
+  font-family:'Grgaref';
+  src:url('http://webmobile.vcmedia.vn/dantri/fonts/GeorgiaRef_fixed.eot?');
+  src:url('http://webmobile.vcmedia.vn/dantri/fonts/GeorgiaRef_fixed.eot#iefix') format('embedded-opentype'),url('http://webmobile.vcmedia.vn/dantri/fonts/GeorgiaRef_fixed.woff') format('woff'),url('http://webmobile.vcmedia.vn/dantri/fonts/GeorgiaRef_fixed.woff2') format('woff2'),url('http://webmobile.vcmedia.vn/dantri/fonts/GeorgiaRef_fixed.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+}
+
 @charset "UTF-8";
 @import "bourbon/bourbon";
 @import "base/grid-settings";
@@ -63,7 +71,7 @@ $black: #111;
 }
 
 #content {
-  @include linear-gradient( top, #f1f1f1 0%, #ffffff 20%, #ffffff 100% );
+  @include linear-gradient( top,  #f7f7f7 0%, #ffffff 20%, #ffffff 100% );
   @include media($large-screen) {
     background: transparent;
   }
@@ -71,7 +79,7 @@ $black: #111;
 #content > .container {
   position: relative;
   @include media($large-screen) {
-    @include linear-gradient( top, #f1f1f1 0%, #ffffff 5%, #ffffff 100% );
+    @include linear-gradient( top, #fafafa 0%, #ffffff 5%, #ffffff 100% );
   }
 
   &:before {
@@ -217,6 +225,7 @@ h3.entry-title {
 }
 
 p.entry-excerpt {
+  font-family: Grgaref;
   color: $dark-gray;
   display: none;
   margin-bottom: 0;
@@ -590,6 +599,13 @@ footer#colophon {
 .cat-item {
   @extend .recent-item;
 }
+.archive {
+  .page-title {
+    @extend .home-h2;
+    margin-top: 1em;
+    font-size: 1.5em;
+  }
+}
 
 /* Single */
 figure.wp-caption {
@@ -608,6 +624,16 @@ figure.wp-caption {
   }
 }
 
+.entry-content {
+  font-family: Grgaref;
+  line-height: 1.6;
+  font-size: 18px;
+
+  h2, h3, h4, h5, h6 {
+    margin-top: 1em;
+  }
+}
+
 .single {
   #primary {
     @include media($large-screen) {
@@ -623,5 +649,34 @@ figure.wp-caption {
         font-size: 0.9em;
       }
     }
+  }
+}
+
+#breadcrumbs {
+  background: #E6E7E8;
+  padding: 6px 1em;
+  font-family: $heading-font-family;
+  span {
+    color: $charcoal;
+  }
+  a {
+    color: darken($gray, 20%);
+  }
+}
+
+.entry-meta {
+  color: darken($gray, 20%);
+  text-transform: uppercase;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  a {
+    color: darken($gray, 20%);
+  }
+
+  time {
+    display: inline;
+    color: darken($gray, 20%);
+    font-family: $base-font-family;
+    font-size: 1em;
   }
 }
