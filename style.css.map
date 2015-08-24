@@ -1,7 +1,7 @@
 {
 "version": 3,
 "mappings": ";;;;;;;;;;;AAGE,IAAK;EACH,UAAU,EAAE,UAAU;;;AAItB,sBAEU;EACR,UAAU,EAAE,OAAO",
-"sources": ["/Applications/MAMP/htdocs/toiphunu.com/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss"],
+"sources": ["/Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss"],
 "sourcesContent": ["@charset \"UTF-8\";\n\n@if $border-box-sizing == true {\n  html { // http://bit.ly/1qk2tVR\n    box-sizing: border-box;\n  }\n\n  * {\n    &,\n    &::after,\n    &::before {\n      box-sizing: inherit;\n    }\n  }\n}\n"],
 "names": [],
 "file": "style.css"
