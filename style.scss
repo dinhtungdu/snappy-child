@@ -14,3 +14,7 @@ Template: snappy
 @import "color";
 @import "../base/variables";
 @import "neat/neat";
+
+body {
+    border-top: 5px solid color(light-gray);
+}

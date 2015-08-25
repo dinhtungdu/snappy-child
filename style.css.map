@@ -1,8 +1,8 @@
 {
 "version": 3,
-"mappings": ";;;;;;;;;;;AAGE,IAAK;EACH,UAAU,EAAE,UAAU;;;AAItB,sBAEU;EACR,UAAU,EAAE,OAAO",
-"sources": ["/Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss"],
-"sourcesContent": ["@charset \"UTF-8\";\n\n@if $border-box-sizing == true {\n  html { // http://bit.ly/1qk2tVR\n    box-sizing: border-box;\n  }\n\n  * {\n    &,\n    &::after,\n    &::before {\n      box-sizing: inherit;\n    }\n  }\n}\n"],
+"mappings": ";;;;;;;;;;;AAGE,IAAK;EACH,UAAU,EAAE,UAAU;;;AAItB,sBAEU;EACR,UAAU,EAAE,OAAO;;;ACMzB,IAAK;EACD,UAAU,EAAE,iBAA2B",
+"sources": ["/Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss","/Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy-child/style.scss"],
+"sourcesContent": ["@charset \"UTF-8\";\n\n@if $border-box-sizing == true {\n  html { // http://bit.ly/1qk2tVR\n    box-sizing: border-box;\n  }\n\n  * {\n    &,\n    &::after,\n    &::before {\n      box-sizing: inherit;\n    }\n  }\n}\n","/*\nTheme Name: MAISON Real Estate Theme\nTheme URI: http://vietmoz.com/\nAuthor: Tung Du\nAuthor URI: http://thietkeweb.vietmoz.com\nDescription: Child theme for snappy\nLicense: GNU General Public License v2 or later\nLicense URI: http://www.gnu.org/licenses/gpl-2.0.html\nTemplate: snappy\n*/\n@charset \"UTF-8\";\n@import \"bourbon/bourbon\";\n@import \"../base/grid-settings\";\n@import \"color\";\n@import \"../base/variables\";\n@import \"neat/neat\";\n\nbody {\n    border-top: 5px solid color(light-gray);\n}\n"],
 "names": [],
 "file": "style.css"
 }

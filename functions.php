@@ -26,6 +26,6 @@ function snappy_child_section($sections){
 
   return $sections;
 }
-// add_filter('redux/options/snappy/sections', 'snappy_child_section');
+add_filter('redux/options/snappy/sections', 'snappy_child_section');
 
 //set_post_thumbnail_size( 270, 220, true );

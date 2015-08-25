@@ -8,12 +8,16 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: snappy
 */
-/* line 4, /Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
+/* line 4, /Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 html {
   box-sizing: border-box; }
 
-/* line 9, /Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
+/* line 9, /Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 *, *::after, *::before {
   box-sizing: inherit; }
+
+/* line 18, style.scss */
+body {
+  border-top: 5px solid #D6D6D6; }
 
 /*# sourceMappingURL=style.css.map */
