@@ -15,6 +15,356 @@ Template: snappy
 @import "../base/variables";
 @import "neat/neat";
 
+$condensed: "Roboto Condensed", sans-serif;
+
 body {
-    border-top: 5px solid color(light-gray);
+  border-top: 5px solid color(light-gray);
+}
+
+.maison-featured {
+  margin-top: 2em;
+
+  & > * {
+    margin-bottom: 1em;
+  }
+
+  a {
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 300;
+    color: color(secondary);
+    margin-bottom: 0.5em;
+    display: block;
+
+    &.readmore {
+      font-style: italic;
+      color: color(primary);
+      font-size: 14px;
+      font-weight: 400;
+      display: block;
+      text-align: right;
+      margin-bottom: 0;
+      margin-top: 5px;
+
+      @include media($large-screen) {
+        margin-top: 0;
+        font-size: 12px;
+      }
+    }
+  }
+  
+  p {
+    font-size: 12px;
+  }
+}
+
+.widget-area {
+  font-size: 0.75em;
+}
+
+#secondary {
+  .widget {
+    border-top: 4px solid color(secondary);
+    position: relative;
+    padding: 2em 1.5em;
+    background: color(tertiary);
+
+    &:before {
+      content: ' ';
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 3em;
+      height: 4px;
+      background: color(primary);
+    }
+  }
+
+  .widget-title {
+    color: color(primary);
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: rem(26);
+    margin-bottom: 0.5em;
+    font-family: $condensed;
+  }
+
+  .widget_msr  {
+
+    .home & {
+      margin-bottom: 0;
+      padding-bottom: 1rem;
+    }
+    .sub-title {
+      font-family: $condensed;
+      margin-bottom: 0.5em;
+      font-size: 1.33em;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    ul {
+      li {
+        font-size: 11px;
+        display: inline-block;
+        width: 26%;
+        position: relative;
+        padding-left: 2em;
+
+        &:first-child {
+          width: 16%;
+        }
+        &:nth-child(2) {
+          width: 38%;
+        }
+      }
+
+      i {
+        background: lighten( color(gray), 10%);
+        color: white;
+        padding: 5px;
+        border-radius: 100%;
+        position: absolute;
+        left: 0;
+      }
+    }
+  }
+
+  .widget_msrtv {
+    .home & {
+      border-top: none;
+      padding-top: 0;
+
+      &:before {
+        content: none;
+      }
+
+      .widget-title {
+        border-top: 1px solid color(light-gray);
+        padding-top: 0.75rem;
+        color: color(secondary);
+        font-size: 1.38rem;
+      }
+    }
+    ul > span {
+      margin-top: 0.5em;
+      display: block;
+    }
+    li {
+      &:before {
+        content: "\e733";
+        font-family: Snappy;
+        font-size: 0.5em;
+        margin-right: 0.5em;
+      }
+
+      a {
+        color: color(dark-gray);
+
+        &:hover {
+          color: color(secondary);
+        }
+      }
+    }
+  }
+  .widget_msrdistric  {
+    .sub-title {
+      font-size: 20px;
+      font-weight: 300;
+      color: color(secondary);
+      margin-bottom: 0.5em;
+      display: block;
+    }
+
+    ul {
+      @include clearfix;
+      border-top: 1px solid color(light-gray);
+      border-left: 1px solid color(light-gray);
+    }
+
+    li {
+      width: 33.33%;
+      float: left;
+      padding: 5px 10px;
+      border: 1px solid color(light-gray);
+      border-width: 0px 1px 1px 0px;
+      background: darken( color(tertiary), 1% );
+
+      a {
+        color: color(text);
+
+        &:hover {
+          color: color(primary);
+        }
+      }
+
+      &:nth-child(11) {
+        border-bottom: 1px solid color(light-gray);
+      }
+
+      &:nth-child(6n+3), &:nth-child(6n+1), &:nth-child(6n+2) {
+        background: #fff;
+      }
+    }
+  }
+
+  .widget_msrsearch {
+    padding: 5px;
+    border-top: none;
+
+    &:before {
+      content: none;
+    }
+
+    form {
+      margin-top: 0;
+
+      input {
+        border-radius: 0;
+      }
+
+      button {
+        background: color(primary);
+        color: white;
+        border-radius: 0;
+        padding: 5px 10px;
+      }
+    }
+  }
+}
+
+.featured-office {
+  h2 {
+    font-family: $base-font-family;
+    font-weight: 300;
+    font-size: 20px;
+    border-bottom: 1px solid color(secondary);
+    margin-bottom: 1em;
+
+    span {
+      display: inline-block;
+      margin-bottom: -1px;
+      color: #fff;
+      padding: 0.3em 0.8em;
+      background: color(primary);
+      border-top-right-radius: 10px;
+    }
+  }
+
+  .snappy-loop {
+    .item {
+      border: 1px solid color(light-gray, light);
+      padding: 1em;
+      text-align: center;
+
+      h3 {
+        color: color(secondary);
+        font-weight: 300;
+        margin-top: 1em;
+        font-size: 1em;
+        border-bottom: 1px solid color(gray);
+      }
+
+      .info {
+        span {
+          display: block;
+        }
+        .add {
+          color: color(text);
+          font-size: 11px;
+        }
+
+        .price {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .owl-nav {
+    text-align: right;
+  }
+  .owl-theme .owl-nav [class*='owl-'] {
+    padding: 0;
+    font-size: 1em;
+    border-radius: 100%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+
+    i {
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+}
+
+footer#colophon {
+  background: color(secondary);
+  border-top: 2px solid color(primary);
+  padding-top: 1em;
+  padding-bottom: 2em;
+  margin-top: 1em;
+
+  .container > * {
+    text-align: center;
+    margin-bottom: 1em;
+
+    @include media($large-screen) {
+      display: inline-block !important;
+      vertical-align: top;
+      text-align: left;
+    }
+  }
+
+  .logo {
+    padding-top: 4px;
+    margin: 0 auto 1em;
+    display: block;
+  }
+
+  .widget_nav_menu {
+    margin-bottom: 0.5em;
+    @include clearfix;
+
+    li {
+      display: block;
+      float: left;
+      font-size: 0.8em;
+      text-transform: uppercase;
+
+      a {
+        color: white;
+        padding: 0 1em;
+        border-right: 1px solid #fff;
+        
+      }
+
+      &:last-child a {
+        border-right: none;
+      }
+    }
+  }
+
+  .textwidget {
+    color: #fff;
+    font-size: 0.8em;
+    padding-left: 1em;
+  }
+
+  .ft-2 {
+    @include media($large-screen) {
+      float: right;
+    }
+
+    .widget_social_widget {
+      ul {
+        border: none;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
 }

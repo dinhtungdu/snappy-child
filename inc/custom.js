@@ -8,7 +8,19 @@ jQuery( function($) {
       autoplay: true,
       autoplayHoverPause: true,
       dotsEach: true,
-      smartSpeed: 500
+      smartSpeed: 750
+    });
+    $(".owl-2").owlCarousel({
+      loop: true,
+      items: 4,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayHoverPause: true,
+      dotsEach: true,
+      smartSpeed: 750,
+      margin: 20,
+      navText: [ '<i class="snappycon icon-chevron-left"></i>', '<i class="snappycon icon-chevron-right"></i>']
     });
   });
 

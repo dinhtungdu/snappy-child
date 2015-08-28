@@ -16,8 +16,299 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-/* line 18, style.scss */
+/* line 20, style.scss */
 body {
   border-top: 5px solid #D6D6D6; }
+
+/* line 24, style.scss */
+.maison-featured {
+  margin-top: 2em; }
+  /* line 27, style.scss */
+  .maison-featured > * {
+    margin-bottom: 1em; }
+  /* line 31, style.scss */
+  .maison-featured a {
+    font-size: 24px;
+    line-height: 1.1;
+    font-weight: 300;
+    color: #2E2C6C;
+    margin-bottom: 0.5em;
+    display: block; }
+    /* line 39, style.scss */
+    .maison-featured a.readmore {
+      font-style: italic;
+      color: #E2145A;
+      font-size: 14px;
+      font-weight: 400;
+      display: block;
+      text-align: right;
+      margin-bottom: 0;
+      margin-top: 5px; }
+      @media screen and (min-width: 53.75em) {
+        /* line 39, style.scss */
+        .maison-featured a.readmore {
+          margin-top: 0;
+          font-size: 12px; } }
+  /* line 56, style.scss */
+  .maison-featured p {
+    font-size: 12px; }
+
+/* line 61, style.scss */
+.widget-area {
+  font-size: 0.75em; }
+
+/* line 66, style.scss */
+#secondary .widget {
+  border-top: 4px solid #2E2C6C;
+  position: relative;
+  padding: 2em 1.5em;
+  background: #F4F4F4; }
+  /* line 72, style.scss */
+  #secondary .widget:before {
+    content: ' ';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 3em;
+    height: 4px;
+    background: #E2145A; }
+/* line 83, style.scss */
+#secondary .widget-title {
+  color: #E2145A;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.625rem;
+  margin-bottom: 0.5em;
+  font-family: "Roboto Condensed", sans-serif; }
+/* line 94, style.scss */
+.home #secondary .widget_msr {
+  margin-bottom: 0;
+  padding-bottom: 1rem; }
+/* line 98, style.scss */
+#secondary .widget_msr .sub-title {
+  font-family: "Roboto Condensed", sans-serif;
+  margin-bottom: 0.5em;
+  font-size: 1.33em; }
+/* line 104, style.scss */
+#secondary .widget_msr p {
+  font-size: 12px; }
+/* line 109, style.scss */
+#secondary .widget_msr ul li {
+  font-size: 11px;
+  display: inline-block;
+  width: 26%;
+  position: relative;
+  padding-left: 2em; }
+  /* line 116, style.scss */
+  #secondary .widget_msr ul li:first-child {
+    width: 16%; }
+  /* line 119, style.scss */
+  #secondary .widget_msr ul li:nth-child(2) {
+    width: 38%; }
+/* line 124, style.scss */
+#secondary .widget_msr ul i {
+  background: #b0a9a2;
+  color: white;
+  padding: 5px;
+  border-radius: 100%;
+  position: absolute;
+  left: 0; }
+/* line 136, style.scss */
+.home #secondary .widget_msrtv {
+  border-top: none;
+  padding-top: 0; }
+  /* line 140, style.scss */
+  .home #secondary .widget_msrtv:before {
+    content: none; }
+  /* line 144, style.scss */
+  .home #secondary .widget_msrtv .widget-title {
+    border-top: 1px solid #D6D6D6;
+    padding-top: 0.75rem;
+    color: #2E2C6C;
+    font-size: 1.38rem; }
+/* line 151, style.scss */
+#secondary .widget_msrtv ul > span {
+  margin-top: 0.5em;
+  display: block; }
+/* line 156, style.scss */
+#secondary .widget_msrtv li:before {
+  content: "\e733";
+  font-family: Snappy;
+  font-size: 0.5em;
+  margin-right: 0.5em; }
+/* line 163, style.scss */
+#secondary .widget_msrtv li a {
+  color: #505050; }
+  /* line 166, style.scss */
+  #secondary .widget_msrtv li a:hover {
+    color: #2E2C6C; }
+/* line 173, style.scss */
+#secondary .widget_msrdistric .sub-title {
+  font-size: 20px;
+  font-weight: 300;
+  color: #2E2C6C;
+  margin-bottom: 0.5em;
+  display: block; }
+/* line 181, style.scss */
+#secondary .widget_msrdistric ul {
+  border-top: 1px solid #D6D6D6;
+  border-left: 1px solid #D6D6D6; }
+  /* line 20, /Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+  #secondary .widget_msrdistric ul::after, #secondary .widget_msrdistric ul::before {
+    clear: both;
+    content: "";
+    display: table; }
+/* line 187, style.scss */
+#secondary .widget_msrdistric li {
+  width: 33.33%;
+  float: left;
+  padding: 5px 10px;
+  border: 1px solid #D6D6D6;
+  border-width: 0px 1px 1px 0px;
+  background: #f1f1f1; }
+  /* line 195, style.scss */
+  #secondary .widget_msrdistric li a {
+    color: #606060; }
+    /* line 198, style.scss */
+    #secondary .widget_msrdistric li a:hover {
+      color: #E2145A; }
+  /* line 203, style.scss */
+  #secondary .widget_msrdistric li:nth-child(11) {
+    border-bottom: 1px solid #D6D6D6; }
+  /* line 207, style.scss */
+  #secondary .widget_msrdistric li:nth-child(6n+3), #secondary .widget_msrdistric li:nth-child(6n+1), #secondary .widget_msrdistric li:nth-child(6n+2) {
+    background: #fff; }
+/* line 213, style.scss */
+#secondary .widget_msrsearch {
+  padding: 5px;
+  border-top: none; }
+  /* line 217, style.scss */
+  #secondary .widget_msrsearch:before {
+    content: none; }
+  /* line 221, style.scss */
+  #secondary .widget_msrsearch form {
+    margin-top: 0; }
+    /* line 224, style.scss */
+    #secondary .widget_msrsearch form input {
+      border-radius: 0; }
+    /* line 228, style.scss */
+    #secondary .widget_msrsearch form button {
+      background: #E2145A;
+      color: white;
+      border-radius: 0;
+      padding: 5px 10px; }
+
+/* line 239, style.scss */
+.featured-office h2 {
+  font-family: "Roboto", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  border-bottom: 1px solid #2E2C6C;
+  margin-bottom: 1em; }
+  /* line 246, style.scss */
+  .featured-office h2 span {
+    display: inline-block;
+    margin-bottom: -1px;
+    color: #fff;
+    padding: 0.3em 0.8em;
+    background: #E2145A;
+    border-top-right-radius: 10px; }
+/* line 257, style.scss */
+.featured-office .snappy-loop .item {
+  border: 1px solid #f0f0f0;
+  padding: 1em;
+  text-align: center; }
+  /* line 262, style.scss */
+  .featured-office .snappy-loop .item h3 {
+    color: #2E2C6C;
+    font-weight: 300;
+    margin-top: 1em;
+    font-size: 1em;
+    border-bottom: 1px solid #998F86; }
+  /* line 271, style.scss */
+  .featured-office .snappy-loop .item .info span {
+    display: block; }
+  /* line 274, style.scss */
+  .featured-office .snappy-loop .item .info .add {
+    color: #606060;
+    font-size: 11px; }
+  /* line 279, style.scss */
+  .featured-office .snappy-loop .item .info .price {
+    font-size: 13px; }
+/* line 285, style.scss */
+.featured-office .owl-nav {
+  text-align: right; }
+/* line 288, style.scss */
+.featured-office .owl-theme .owl-nav [class*='owl-'] {
+  padding: 0;
+  font-size: 1em;
+  border-radius: 100%;
+  width: 25px;
+  height: 25px;
+  text-align: center; }
+  /* line 296, style.scss */
+  .featured-office .owl-theme .owl-nav [class*='owl-'] i {
+    vertical-align: middle;
+    display: inline-block; }
+
+/* line 303, style.scss */
+footer#colophon {
+  background: #2E2C6C;
+  border-top: 2px solid #E2145A;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  margin-top: 1em; }
+  /* line 310, style.scss */
+  footer#colophon .container > * {
+    text-align: center;
+    margin-bottom: 1em; }
+    @media screen and (min-width: 53.75em) {
+      /* line 310, style.scss */
+      footer#colophon .container > * {
+        display: inline-block !important;
+        vertical-align: top;
+        text-align: left; } }
+  /* line 321, style.scss */
+  footer#colophon .logo {
+    padding-top: 4px;
+    margin: 0 auto 1em;
+    display: block; }
+  /* line 327, style.scss */
+  footer#colophon .widget_nav_menu {
+    margin-bottom: 0.5em; }
+    /* line 20, /Volumes/Data/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/bourbon/addons/_clearfix.scss */
+    footer#colophon .widget_nav_menu::after, footer#colophon .widget_nav_menu::before {
+      clear: both;
+      content: "";
+      display: table; }
+    /* line 331, style.scss */
+    footer#colophon .widget_nav_menu li {
+      display: block;
+      float: left;
+      font-size: 0.8em;
+      text-transform: uppercase; }
+      /* line 337, style.scss */
+      footer#colophon .widget_nav_menu li a {
+        color: white;
+        padding: 0 1em;
+        border-right: 1px solid #fff; }
+      /* line 344, style.scss */
+      footer#colophon .widget_nav_menu li:last-child a {
+        border-right: none; }
+  /* line 350, style.scss */
+  footer#colophon .textwidget {
+    color: #fff;
+    font-size: 0.8em;
+    padding-left: 1em; }
+  @media screen and (min-width: 53.75em) {
+    /* line 356, style.scss */
+    footer#colophon .ft-2 {
+      float: right; } }
+  /* line 362, style.scss */
+  footer#colophon .ft-2 .widget_social_widget ul {
+    border: none; }
+  /* line 365, style.scss */
+  footer#colophon .ft-2 .widget_social_widget a {
+    color: #fff; }
 
 /*# sourceMappingURL=style.css.map */
