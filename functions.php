@@ -5,13 +5,20 @@
  */
 
 
-if( ! function_exists( 'snappy_child_scripts' ) ) :
 function snappy_child_scripts() {
 	wp_enqueue_style( 'snappy-style-child', get_stylesheet_uri(), false, null );
   wp_enqueue_script( 'snappy-child-js', get_stylesheet_directory_uri() . '/inc/custom.js', array(), '20141012', true );
+  // wp_localize_script( 'ajax-pagination', 'myAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 }
-endif;
-add_action( 'wp_enqueue_scripts', 'snappy_child_scripts', 20 );
+add_action( 'wp_enqueue_scripts', 'snappy_child_scripts' );
+
+function myAjax(){ ?>
+      <script type="text/javascript">
+        var ajaxurl = '<?php echo admin_url( "admin-ajax.php" ); ?>';
+        var ajaxnonce = '<?php echo wp_create_nonce( "itr_ajax_nonce" ); ?>';
+      </script><?php
+}
+add_action ( 'wp_head', 'myAjax' );
 
 function snappy_child_section($sections){
   $sections[] = array(
@@ -133,4 +140,111 @@ function district_taxonomy() {
 }
 add_action( 'init', 'district_taxonomy', 0 );
 
+}
+
+function template_chooser($template)   
+{    
+  global $wp_query;   
+  $post_type = get_query_var('post_type');   
+  if( $wp_query->is_search && $post_type == 'office' )   
+  {
+    return locate_template('o-search.php');  //  redirect to archive-search.php
+  }   
+  return $template;   
+}
+add_filter('template_include', 'template_chooser');    
+
+remove_filter( 'the_title', 'bawmrp_cut_words' );
+
+if ( ! function_exists('chothue_post_type') ) {
+
+// Register Custom Post Type
+function chothue_post_type() {
+
+  $labels = array(
+    'name'                => _x( 'Văn phòng cho thuê', 'Post Type General Name', 'snappy-msr' ),
+    'singular_name'       => _x( 'Tin cho thuê', 'Post Type Singular Name', 'snappy-msr' ),
+    'menu_name'           => __( 'Tin cho thuê', 'snappy-msr' ),
+    'name_admin_bar'      => __( 'Tin cho thuê', 'snappy-msr' ),
+    'parent_item_colon'   => __( 'Parent Item:', 'snappy-msr' ),
+    'all_items'           => __( 'All Items', 'snappy-msr' ),
+    'add_new_item'        => __( 'Add New Item', 'snappy-msr' ),
+    'add_new'             => __( 'Add New', 'snappy-msr' ),
+    'new_item'            => __( 'New Item', 'snappy-msr' ),
+    'edit_item'           => __( 'Edit Item', 'snappy-msr' ),
+    'update_item'         => __( 'Update Item', 'snappy-msr' ),
+    'view_item'           => __( 'View Item', 'snappy-msr' ),
+    'search_items'        => __( 'Search Item', 'snappy-msr' ),
+    'not_found'           => __( 'Not found', 'snappy-msr' ),
+    'not_found_in_trash'  => __( 'Not found in Trash', 'snappy-msr' ),
+  );
+  $args = array(
+    'label'               => __( 'Tin cho thuê', 'snappy-msr' ),
+    'description'         => __( 'Đăng các tin cho thuê văn phòng.', 'snappy-msr' ),
+    'labels'              => $labels,
+    'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', ),
+    'taxonomies'          => array( 'post_tag' ),
+    'hierarchical'        => false,
+    'public'              => true,
+    'show_ui'             => true,
+    'show_in_menu'        => true,
+    'menu_position'       => 5,
+    'show_in_admin_bar'   => true,
+    'show_in_nav_menus'   => true,
+    'can_export'          => true,
+    'has_archive'         => true,   
+    'exclude_from_search' => false,
+    'publicly_queryable'  => true,
+    'capability_type'     => 'page',
+  );
+  register_post_type( 'tin_cho_thue', $args );
+
+}
+add_action( 'init', 'chothue_post_type', 0 );
+
+}
+
+function pagesizer( $query ) {
+    if ( is_admin() || ! $query->is_main_query() )
+        return;
+
+    if ( is_category ( 3 ) ) {
+        // Display 50 posts for a custom post type called 'movie'
+        $query->set( 'posts_per_page', 6 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'pagesizer', 1 );
+
+add_action( 'wp_ajax_load_post', 'load_post' );
+add_action( 'wp_ajax_nopriv_load_post', 'load_post' );
+
+function load_post() {
+  $page2 = $_POST['page2'];
+  
+  $args = array(
+    'post_type'=> 'post',
+    'posts_per_page' => 4,
+    'paged' => $page2,
+  );
+  ob_start();
+  
+  $loop = array(
+    'args' => $args,
+    'display' => 'div', //div, article, li 
+    'type' => 'archive', //archive, single
+    'template' => 'title-excerpt',
+    'wrapper' => 'maison-featured',
+    'excerpt' => 30,
+    'pagination' => true,
+    'ajaxpagination' => true,
+  );
+
+  snappy_loop($loop);
+  
+  $content = ob_get_clean();
+  
+  echo $content;
+  die();
+      
 }

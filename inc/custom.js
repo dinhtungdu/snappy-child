@@ -27,4 +27,28 @@ jQuery( function($) {
   $(window).load(function() {
     
   });
+
+  jQuery(document).on( 'click', '.ajaxpagination a.page-numbers', function() {
+    var $link = jQuery(this);
+    var $page = $link.attr('data-page');
+    var $content = jQuery('.tthi-wrap')
+    
+    jQuery.ajax({
+        type : 'post',
+        url : ajaxurl,
+        data : {
+            action : 'load_post',
+            page2 : $page
+        },
+        beforeSend: function() {
+            $content.addClass('loading');
+        },
+        success : function( response ) {
+            $content.removeClass('loading');
+            $content.html( response );
+        }
+    });
+    
+    return false;
+  })
 });
