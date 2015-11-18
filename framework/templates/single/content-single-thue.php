@@ -10,8 +10,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('single-office single-thue'); ?>>
 	<header class="entry-header">
 
-		<img class="detail-banner" src="<?php echo get_stylesheet_directory_uri(); ?>/img/detail-banner.jpg">
-
+		<div class="img-wrap">
+			<img class="detail-banner" src="<?php echo get_stylesheet_directory_uri(); ?>/img/detail-banner.jpg">
+		</div>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<time class="entry-date published updated"><?php the_time( 'd/m/Y' ); ?></time>
 		<div class="entry-excerpt">

@@ -27,6 +27,7 @@ get_header(); ?>
 				'orderby' => 'name',
 				'order' => 'ASC',
 				'hide_empty' => 0,
+				'posts_per_page' => -1
 				);
 			$taxonomies = get_terms( 'district', $args2);
 			// print_r($taxonomies);
@@ -57,6 +58,6 @@ get_header(); ?>
 			?>
 		</div>
 		<div class="clearfix"></div>
-		<?php the_archive_description( '<div class="taxonomy-description">', '</div>' ); ?>
+		<?php the_archive_description( '<div id="primary" class="taxonomy-description">', '</div>' ); ?>
 	</main>
 <?php get_footer(); ?>

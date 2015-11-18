@@ -40,6 +40,7 @@ class MSR_distric extends WP_Widget {
       <li><a href="<?php echo get_term_link( $taxonomy ); ?>" title="<?php echo $taxonomy->name; ?>"><?php echo $taxonomy->name; ?></a></li>
       <?php }
     ?>
+    <li style="height: 29px;"></li>
     </ul>
     <?php
     echo $args['after_widget'];

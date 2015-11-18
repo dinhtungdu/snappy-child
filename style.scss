@@ -20,10 +20,26 @@ $condensed: "Roboto Condensed", sans-serif;
 body {
   border-top: 5px solid color(light-gray);
 }
-
+p {
+  text-align: justify;
+}
+.home, .page-template-page-intro, .page-template-page-tongquan, .tax-district {
+  #primary.content-area {
+    @include media($large-screen) {
+      width: 66.3% !important;
+    }
+  }
+}
 .maison-featured {
   margin-top: 2em;
 
+  @include media($large-screen) {
+    padding-right: 2em;
+
+    .category-tu-van & {
+      padding-right: 0;
+    }
+  }
   & > * {
     margin-bottom: 1em;
   }
@@ -55,6 +71,7 @@ body {
   
   p {
     font-size: 12px;
+    text-align: justify;
   }
 }
 
@@ -66,8 +83,13 @@ body {
   .widget {
     border-top: 4px solid color(secondary);
     position: relative;
-    padding: 2em 1.5em;
+    padding: 2em 2em;
     background: color(tertiary);
+    @include clearfix;
+
+    &.widget_msrdistric {
+      padding: 1.7em;
+    }
 
     &:before {
       content: ' ';
@@ -85,20 +107,21 @@ body {
     text-transform: uppercase;
     font-weight: 400;
     font-size: rem(26);
-    margin-bottom: 0.5em;
+    margin-bottom: 0.1em;
     font-family: $condensed;
   }
 
   .widget_msr  {
 
-    .home & {
+    .page-template-page-intro &, .home & {
       margin-bottom: 0;
       padding-bottom: 1rem;
     }
     .sub-title {
       font-family: $condensed;
       margin-bottom: 0.5em;
-      font-size: 1.33em;
+      font-size: 16.7px;
+      color: #606060;
     }
 
     p {
@@ -133,9 +156,9 @@ body {
   }
 
   .widget_msrtv {
-    .home & {
+    .home &, .page-template-page-intro & {
       border-top: none;
-      padding-top: 0;
+      padding-top: 13px;
 
       &:before {
         content: none;
@@ -156,8 +179,9 @@ body {
       &:before {
         content: "\e733";
         font-family: Snappy;
-        font-size: 0.5em;
+        font-size: 0.75em;
         margin-right: 0.5em;
+        color: color(secondary);
       }
 
       a {
@@ -220,9 +244,14 @@ body {
 
     form {
       margin-top: 0;
+      padding-right: 73px;
 
       input {
         border-radius: 0;
+        @include placeholder {
+          font-style: normal;
+          text-align: center;
+        }
       }
 
       button {
@@ -230,6 +259,14 @@ body {
         color: white;
         border-radius: 0;
         padding: 5px 10px;
+
+        &:before {
+          content: '';
+          border-left: 1px soid color(tertiary);
+          display: inline-block;
+          height: 100%;
+          position:absolute;
+        }
       }
     }
   }
@@ -254,7 +291,7 @@ body {
   }
 
   .owl-nav {
-    text-align: right;
+    text-align: right !important;
   }
   .owl-theme .owl-nav [class*='owl-'] {
     padding: 0;
@@ -274,29 +311,35 @@ body {
 .toanha, .featured-office, .office-list {
   .snappy-loop {
     .item {
-      border: 1px solid color(light-gray, light);
+      border: 1px solid color(light-gray, light) !important; 
       padding: 1em;
       text-align: center;
 
       h3 {
         color: color(secondary);
-        font-weight: 300;
+        font-weight: 400;
         margin-top: 1em;
         font-size: 1em;
         border-bottom: 1px solid color(gray);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
       }
 
       .info {
+        float: none !important;
+        width: 100%;
+
         span {
           display: block;
         }
         .add {
-          color: color(text);
-          font-size: 11px;
+          color: #575757;
+          font-size: 8.5px;
         }
 
         .price {
-          font-size: 13px;
+          font-size: 11px;
         }
       }
     }
@@ -315,9 +358,7 @@ footer#colophon {
     margin-bottom: 1em;
 
     @include media($large-screen) {
-      display: inline-block !important;
-      vertical-align: top;
-      text-align: left;
+      float: left;
     }
   }
 
@@ -334,7 +375,7 @@ footer#colophon {
     li {
       display: block;
       float: left;
-      font-size: 0.8em;
+      font-size: em(11);
       text-transform: uppercase;
 
       a {
@@ -352,8 +393,9 @@ footer#colophon {
 
   .textwidget {
     color: #fff;
-    font-size: 0.8em;
+    font-size: em(10);
     padding-left: 1em;
+    text-align: left;
   }
 
   .ft-2 {
@@ -364,6 +406,15 @@ footer#colophon {
     .widget_social_widget {
       ul {
         border: none;
+        text-align: right;
+
+        li {
+          font-size: 1.2em;
+        }
+
+        li:last-child {
+          margin-right: 0;
+        }
       }
       a {
         color: #fff;
@@ -376,7 +427,11 @@ footer#colophon {
   .widget-area {
     .widget {
       margin-bottom: 0;
-      padding-bottom: 0.7em !important;
+      padding-bottom: 1.7em !important;
+
+      &.widget_msrsearch  {
+        padding-bottom: 10px !important;
+      }
     }
   }
   #secondary {
@@ -395,6 +450,21 @@ footer#colophon {
     margin-top: 5px;
     font-size: 12px;
     background: color(tertiary);
+
+    @include media(1080px) {
+      display: block;
+      float: left;
+      padding: 0.5em 0;
+      text-align: center;
+      width: 7.531%;
+      margin-right: 0.3%;
+      &:first-child {
+        width:13.75%;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
 
     a {
       color: color(text);
@@ -549,16 +619,29 @@ footer#colophon {
       color: color(secondary);
     }
   }
-
+  
+  .banner-wrap {
+    @include media($large-screen) {
+      margin-right: -45px;
+    }
+  }
   .detail-banner {
     margin-bottom: 1em;
     display: block;
   }
 }
 
+.single-office div#msrtv-3 {
+    padding-bottom: 16px;
+}
+
 .img-cat {
   position: relative;
   margin-bottom: 2em;
+
+  @include media($large-screen) {
+    margin-right: -38px;
+  }
 
   h1 {
     background: rgba( #093E79, 0.4 );
@@ -583,10 +666,11 @@ footer#colophon {
   }
 }
 
+
 .tuvan.snappy-loop {
   .item {
     @include clearfix;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
   }
   .thumb {
     width: 150px;
@@ -614,12 +698,14 @@ footer#colophon {
 
   .readmore {
     float: right;
+    font-style: italic;
   }
 }
 
 .single-tuvan {
   h1.entry-title {
     border-bottom: none;
+    font-size: 26px;
   }
 }
 
@@ -702,5 +788,121 @@ footer#colophon {
         }
       }
     }
+  }
+}
+
+.owl-1.owl-theme {
+  .owl-nav [class*='owl-'] {
+    position: absolute;
+    top: 50%;
+    margin: 0;
+    padding: 0;
+    background: color(primary);
+    border-radius: 0;
+    width: 20px;
+    height: 20px;
+    font-size: 15px;
+
+    &:hover {
+      background: color(secondary);
+    }
+  }
+  .owl-prev {
+    left: 0;
+  }
+  .owl-next {
+    right: 0;
+  }
+}
+
+.widget-area .widget {
+  margin-bottom: 1em;
+}
+
+.toanha.widget {
+  padding: 0 !important;
+  border: none !important;
+  background: #fff !important;
+
+  > h3 {
+    font-size: 20px;
+  }
+
+  &:before {
+    content: none !important;
+  }
+}
+
+.tthi {
+  h2 {
+    color: color(secondary);
+    font-weight: 300;
+    border-bottom: 1px solid rgba( color(secondary), 0.7 );
+    text-transform: uppercase;
+    font-size: 24px;
+  }
+}
+.pagination ul li .current {
+  background: #f5f5f5 !important;
+}
+.pagination ul li > * {
+  border: none !important;
+  background: #f5f5f5;
+}
+
+#site-navigation {
+  @include media($large-screen) {
+    padding-right: 2em;
+  }
+}
+
+nav#site-navigation ul li.main-menu-item>a {
+  @include media($large-screen) {
+    color: #998F86;
+    font-size: 12px !important;
+  }
+}
+
+.single .img-wrap {
+  margin-right: -40px;
+}
+
+
+.single-tin_cho_thue, .single-post {
+  #secondary {
+    .widget_msrtv {
+      padding-bottom: 19px;
+      padding-top: 19px;
+    }
+  }
+}
+
+.archive.tag {
+  h1.page-title {
+    color: color(secondary);
+    font-weight: 300;
+    border-bottom: 1px solid rgba( color(secondary), 0.7 );
+    text-transform: uppercase;
+    font-size: 24px;
+    margin-top: 1em;
+  }
+  .tag-item {
+    margin-bottom: 1em;
+    @include clearfix;
+  }
+  .thumb {
+    display: block;
+    float: left;
+    width: 200px;
+    margin-right: 1.5em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  h2 a {
+    font-weight: 300;
+    color: color(secondary);
+    font-size: 1.3em;
+    line-height: 1;
   }
 }

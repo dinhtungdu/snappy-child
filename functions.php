@@ -183,7 +183,7 @@ function chothue_post_type() {
     'description'         => __( 'Đăng các tin cho thuê văn phòng.', 'snappy-msr' ),
     'labels'              => $labels,
     'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'comments', ),
-    'taxonomies'          => array( 'post_tag' ),
+    'taxonomies'          => array( 'post_tag', 'district' ),
     'hierarchical'        => false,
     'public'              => true,
     'show_ui'             => true,
@@ -233,8 +233,8 @@ function load_post() {
     'args' => $args,
     'display' => 'div', //div, article, li 
     'type' => 'archive', //archive, single
-    'template' => 'title-excerpt',
-    'wrapper' => 'maison-featured',
+    'template' => 'title-excerpt-img',
+    'wrapper' => 'tuvan',
     'excerpt' => 30,
     'pagination' => true,
     'ajaxpagination' => true,
@@ -247,4 +247,17 @@ function load_post() {
   echo $content;
   die();
       
+}
+
+add_filter('pre_get_posts', 'query_post_type');
+function query_post_type($query) {
+  if( is_tag() ) {
+    $post_type = get_query_var('post_type');
+  if($post_type)
+      $post_type = $post_type;
+  else
+      $post_type = array('post','office', 'tin_cho_thue', 'nav_menu_item'); // replace cpt to your custom post type
+    $query->set('post_type',$post_type);
+  return $query;
+    }
 }

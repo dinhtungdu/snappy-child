@@ -26,6 +26,7 @@ global $snappy;
 		</div>
 		<div class="ft-2 ftwg">
 			<?php dynamic_sidebar( 'footer-2' ); ?>
+			<p class="createdby" style="font-size: 0.8em; color: #fff; text-align: right;">Copyright © <?php the_date('Y');?> <?php echo get_bloginfo('name'); ?><br/>Created by VietMoz</p>
 		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -55,8 +55,8 @@ get_header(); ?>
             'args' => $args,
             'display' => 'div', //div, article, li 
             'type' => 'archive', //archive, single
-            'template' => 'title-excerpt',
-            'wrapper' => 'maison-featured',
+            'template' => 'title-excerpt-img',
+            'wrapper' => 'tuvan',
             'excerpt' => 30,
             'pagination' => true,
             'ajaxpagination' => true,
@@ -69,5 +69,5 @@ get_header(); ?>
     </main><!-- #main -->
   </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php get_sidebar('tuvan'); ?>
 <?php get_footer(); ?>
