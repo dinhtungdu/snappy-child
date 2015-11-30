@@ -379,3 +379,16 @@ function jptweak_remove_share() {
 }
  
 add_action( 'loop_start', 'jptweak_remove_share' );
+
+
+// Add a default avatar to Settings > Discussion
+if ( !function_exists('fb_addgravatar') ) {
+  function fb_addgravatar( $avatar_defaults ) {
+    $myavatar = get_stylesheet_directory_uri() . '/img/vietmoz-avatar.jpg';
+    $avatar_defaults[$myavatar] = 'VietMoz';
+
+    return $avatar_defaults;
+  }
+
+  add_filter( 'avatar_defaults', 'fb_addgravatar' );
+}
