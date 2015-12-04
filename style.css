@@ -1,19 +1,157 @@
+@charset "UTF-8";
 /*
-Theme Name: So VHTT Ha NOi
-Theme URI: http://sovhtt.hanoi.gov.vn/
+Theme Name: Snappy - Child Theme
+Theme URI: http://moztheme.com/
 Author: Tung Du
-Author URI: http://vietmoz.com
-Description: Child theme for So VHTT site.
+Author URI: http://dinhtung.info
+Description: Child theme for snappy
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Template: snappy
 */
-/* line 4, /Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 html {
   box-sizing: border-box; }
 
-/* line 9, /Volumes/Work/htdocs/vietmoz/2015/maisonreal/wp-content/themes/snappy/framework/assets/scss/lib/neat/grid/_box-sizing.scss */
 *, *::after, *::before {
   box-sizing: inherit; }
+
+body.boxed #page {
+  max-width: 1120px !important; }
+
+#content a:hover {
+  text-decoration: underline; }
+
+.snappy-row {
+  padding-left: 0 !important;
+  padding-right: 0 !important; }
+
+#snappy-mobile-menu {
+  position: absolute;
+  z-index: 9999;
+  right: 10px; }
+
+#snappy-mobile-search {
+  position: absolute;
+  z-index: 9999;
+  right: 50px; }
+
+.snappy-menu-wrapper, #colophon #menu-footer-menu, .gradient {
+  background-color: #036FBC;
+  background-image: -webkit-linear-gradient(#036FBC 0%, #0363a8 50%, #036FBC 100%);
+  background-image: linear-gradient(#036FBC 0%, #0363a8 50%, #036FBC 100%); }
+
+#primary {
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  font-size: 0.85em; }
+
+.home #primary {
+  border: none; }
+
+#content .container {
+  background: url(http://sotaichinh.hanoi.gov.vn/portal/vi/images/i_17.jpg) repeat-x; }
+
+.widget-area .widget-title {
+  background-color: #036FBC;
+  background-image: -webkit-linear-gradient(#036FBC 0%, #0363a8 50%, #036FBC 100%);
+  background-image: linear-gradient(#036FBC 0%, #0363a8 50%, #036FBC 100%); }
+.widget-area .widget_nav_menu li {
+  border-bottom: 1px dashed #ddd;
+  padding: 3px 5px; }
+  .widget-area .widget_nav_menu li:before {
+    content: '»';
+    margin-right: 5px; }
+  .widget-area .widget_nav_menu li a {
+    font-weight: bold;
+    color: black; }
+    .widget-area .widget_nav_menu li a:hover {
+      color: #02518a; }
+
+#colophon #menu-footer-menu {
+  text-align: center; }
+  #colophon #menu-footer-menu li {
+    display: inline-block;
+    padding: 5px 10px; }
+  #colophon #menu-footer-menu a {
+    font-weight: bold;
+    color: white; }
+#colophon .textwidget {
+  text-align: center;
+  padding: 10px; }
+  #colophon .textwidget p {
+    margin-bottom: 0; }
+  #colophon .textwidget .site-name {
+    font-weight: bold;
+    text-transform: uppercase; }
+
+.single main article .entry-title {
+  display: inline; }
+.single main article .entry-excerpt {
+  font-style: italic;
+  font-weight: bold;
+  color: #999; }
+
+.toparticle {
+  margin-right: -10px;
+  margin-left: -10px;
+  padding: 5px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  margin-bottom: 7px; }
+
+.archive article {
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 7px; }
+  .archive article::after, .archive article::before {
+    clear: both;
+    content: "";
+    display: table; }
+.archive .item-title {
+  font-weight: bold;
+  font-size: 14px;
+  display: block; }
+.archive .item-thumbnail {
+  width: 150px;
+  display: block;
+  float: left;
+  margin-right: 10px; }
+
+.cat-block {
+  border: 1px solid #ddd;
+  padding: 0 10px;
+  margin-left: -10px;
+  margin-right: -10px;
+  margin-bottom: 10px; }
+  .cat-block h2 a {
+    color: white; }
+  .cat-block .item-title {
+    font-weight: bold;
+    font-size: 14px;
+    display: block; }
+  .cat-block .item-thumbnail {
+    width: 150px;
+    display: block;
+    float: left;
+    margin-right: 10px; }
+  .cat-block .offset-area .post {
+    border-bottom: 1px dashed #ddd;
+    margin-bottom: 0px;
+    padding-bottom: 10px; }
+    .cat-block .offset-area .post::after, .cat-block .offset-area .post::before {
+      clear: both;
+      content: "";
+      display: table; }
+  .cat-block ul {
+    list-style: disc;
+    padding-left: 1.3em; }
+    .cat-block ul .item-title {
+      font-size: 0.9em;
+      color: black;
+      border-bottom: 1px dashed #eee; }
+      .cat-block ul .item-title:hover {
+        color: #036FBC; }
 
 /*# sourceMappingURL=style.css.map */

@@ -14,3 +14,175 @@ Template: snappy
 @import "color";
 @import "../base/variables";
 @import "neat/neat";
+
+body.boxed #page {
+	max-width: 1120px !important;
+}
+#content a:hover {
+	text-decoration: underline;
+}
+.snappy-row {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+#snappy-mobile-menu {
+	position: absolute;
+	z-index: 9999;
+	right: 10px;
+}
+#snappy-mobile-search {
+	position: absolute;
+	z-index: 9999;
+	right: 50px;
+}
+
+.snappy-menu-wrapper, .gradient {
+	@include linear-gradient(color(primary) 0%, darken(color(primary), 4%) 50%, color(primary) 100% );
+}
+#primary {
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	font-size: 0.85em;
+}
+.home #primary {
+	border: none;
+}
+#content {
+	.container {
+		background: url(http://sotaichinh.hanoi.gov.vn/portal/vi/images/i_17.jpg) repeat-x;
+	}
+}
+.widget-area {
+	.widget-title {
+		@include linear-gradient(color(primary) 0%, darken(color(primary), 4%) 50%, color(primary) 100% );
+	}
+	
+	.widget_nav_menu {
+		li {
+			border-bottom: 1px dashed #ddd;
+			padding: 3px 5px;
+			&:before {
+				content: '»';
+				margin-right: 5px;
+			}
+			a {
+				font-weight: bold;
+				color: color(black);
+				&:hover {
+					color: color(primary, dark);
+				}
+			}	
+		} 
+	}
+
+}
+
+#colophon {
+	#menu-footer-menu {
+		@extend .snappy-menu-wrapper;
+		text-align: center;
+		li {
+			display: inline-block;
+			padding: 5px 10px;
+		}
+		a {
+			font-weight: bold;
+			color: color(white);
+		}
+	}
+	.textwidget {
+		text-align: center;
+		padding: 10px;
+		p {
+			margin-bottom: 0;
+		}
+		.site-name {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+	}
+}
+.single {
+	main article {
+
+		.entry-title {
+			display: inline;
+		}
+		.entry-excerpt {
+			font-style: italic;
+			font-weight: bold;
+			color: color(gray);
+		}
+	}
+}
+.toparticle {
+	margin-right: -10px;
+	margin-left: -10px;
+	padding: 5px 10px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
+	margin-bottom: 7px;
+}
+
+.archive {
+	article {
+		@include clearfix;
+		border-bottom: 1px dashed #ddd;
+		padding-bottom: 10px;
+		margin-bottom: 7px;
+	}
+	.item-title {
+		font-weight: bold;
+		font-size: 14px;
+		display: block;
+	}
+	.item-thumbnail {
+		width: 150px;
+		display: block;
+		float: left;
+		margin-right: 10px;
+	}
+}
+
+.cat-block {
+	border: 1px solid #ddd;
+	padding: 0 10px;
+	margin-left: -10px;
+	margin-right: -10px;
+	margin-bottom: 10px;
+
+	h2 a {
+		color: color(white);
+	}
+	.item-title {
+		font-weight: bold;
+		font-size: 14px;
+		display: block;
+	}
+	.item-thumbnail {
+		width: 150px;
+		display: block;
+		float: left;
+		margin-right: 10px;
+	}
+	.offset-area .post {
+		@include clearfix;
+		border-bottom: 1px dashed #ddd;
+		margin-bottom: 0px;
+		padding-bottom: 10px;
+	}
+	ul {
+		list-style: disc;
+		padding-left: 1.3em;
+		.item-title {
+			font-size: 0.9em;
+			color: color(black);
+			border-bottom: 1px dashed #eee;
+			&:hover {
+				color: color(primary);
+			}
+		}
+	}
+}
