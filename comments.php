@@ -56,6 +56,33 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'snappy' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php
+	$fields =  array(
+			  'author' =>
+			    '<p class="comment-form-author"><label for="author">' . __( 'Họ tên', 'domainreference' ) .
+			    ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
+			    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
+			    '" size="30"' . $aria_req . ' /></p>',
+		
+			  'email' =>
+			    '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) .
+			    ( $req ? '<span class="required"> *</span>' : '' ) . '</label> ' .
+			    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+			    '" size="30"' . $aria_req . ' /></p>',
+		
+			  'url' => '',
+			);
+	$args = array(
+
+	  'comment_field' =>  '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) .
+	    '</label><textarea id="comment" name="comment" aria-required="true">' .
+	    '</textarea></p>',
+	  'comment_notes_before' => '',
+
+	  'comment_notes_after' => '',
+
+	  'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+	);
+	comment_form($args); ?>
 
 </div><!-- #comments -->

@@ -4,6 +4,7 @@
  *
  * @package Snappy
  */
+$current_term = wp_get_post_terms( get_the_ID(), 'van_ban_cat' );
 
 get_header(); ?>
 
@@ -11,15 +12,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php while ( have_posts() ) : the_post(); ?>
-
-			<?php get_template_part( 'framework/templates/single/content', 'single' ); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
+			<?php include(locate_template( 'framework/templates/single/content-van-ban.php' ));
+		?>
 
 		<?php endwhile; // End of the loop. ?>
 

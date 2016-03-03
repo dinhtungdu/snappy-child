@@ -6,10 +6,11 @@
  *
  * @package Snappy
  */
-$catID = get_query_var( 'cat' );
-$catobj = get_categories( array('parent' => $catID));
-get_header(); ?>
-
+$catslug = get_query_var( 'term' );
+$cat = get_term_by('slug', $catslug, 'quan_ly_cat' );
+$catobj = get_terms( 'quan_ly_cat', array('parent' => $cat->term_id));
+get_header();
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -49,30 +50,34 @@ get_header(); ?>
 
 		<?php else: ?>
 			<?php foreach ($catobj as $cat_item ) {
-			$cat_link = get_category_link( $cat_item->term_id );
+			$cat_link = get_term_link( $cat_item );
 			$cat_name = $cat_item->name;
 			$args = array(
-				'posts_per_page' => 6,
-				'cat'			 => $cat_item->term_id,
+				'posts_per_page' => 10,
+				'post_type' => 'quan_ly',
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'quan_ly_cat',
+						'field'    => 'slug',
+						'terms'    => $cat_item->slug,
+					),
+				),
 			);
 			$loop = array(
 				'args' => $args,
 				'display' => 'li', //div, article, li 
 				'type' => 'archive', //archive, single
-				'template' => 'title',
-				'excerpt' => 30,
-				'offset' => 1,
-				'offset_template' => 'title-thumb-excerpt',
+				'template' => 'title-nodate',
 			);?>
-			<div class="cat-block">
+			<div class="cat-block cai-cach-hanh-chinh">
 				<h2 class="gradient toparticle">
 					<a href="<?php echo $cat_link; ?>" title="<?php echo $cat_name; ?>">
 						<?php echo $cat_name; ?>
 					</a>
 				</h2>
+				<a class="counter" href="<?php echo $cat_link; ?>">Tổng số: <span><?php echo $cat_item->count; ?> thủ tục</span></a>
 				<?php snappy_loop($loop); ?>
 			</div>
-		<?php $counter++; ?>
 		<?php } //endforeach; ?>
 		<?php endif; ?>
 
